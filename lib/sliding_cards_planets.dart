@@ -1,4 +1,4 @@
-import './planets/planet_earth.dart';
+import './detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:math' as math;
@@ -145,7 +145,7 @@ class SlidingCard extends StatelessWidget {
       child: Card(
         color: Colors.black,
         margin: EdgeInsets.only(left: 8, right: 8, bottom: 24),
-        elevation: 5,
+        elevation: 3,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
         child: Column(
           children: <Widget>[
@@ -229,7 +229,7 @@ class CardContent extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (BuildContext context) => SecondRoute()),
+                          builder: (BuildContext context) => Container(child: SecondRoute())),
                     );
                   },
                 ),
@@ -242,74 +242,3 @@ class CardContent extends StatelessWidget {
   }
 }
 
-class SecondRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text('Planet Details'),
-      ),
-      body: Stack(
-        children: <Widget>[
-          PlanetWidget(),
-          // PlanetDetails(),
-          ],
-      ),
-    );
-  }
-}
-
-class PlanetDetails extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Center(
-          child: Text(
-            '''
-SOLAR SYSTEM
-
-
-Age:	4.6 Billion Years
-
-Number of Planets:	8
-
-Number of Dwarf Planets:	5
-
-Number of Moons:	181
-
-Number of Asteroids:	552,894
-
-Number of Comets:	3,083
-
-Diameter:	18.75 trillion kilometers  (11.65 trillion miles)''',
-            style: TextStyle(
-              fontSize: 15,
-              color: Colors.white,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class ImageWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height/2.5,
-      child: Column(
-      
-        
-      ),
-            
-       
-    );
-  }
-}

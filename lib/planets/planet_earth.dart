@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/rendering.dart';
 
 class PlanetEarth extends StatefulWidget {
   @override
@@ -91,7 +91,7 @@ class PlanetWidget extends StatelessWidget {
         // padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/earth.png"),
+            image: AssetImage("assets/earth.png"),
             fit: BoxFit.scaleDown,
           ),
         ),
